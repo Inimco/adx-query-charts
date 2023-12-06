@@ -272,13 +272,13 @@ export abstract class Chart {
             splitByMap[splitByValue].push([dateNumericValue, yValue]);
         });
         
-        const combinationSetup = options.chartOptions.customVizualizerChartOptions.combination;
+        const combinationSetup = options.chartOptions.customVizualizerChartOptions?.combination || undefined;
 
         for (let splitByValue in splitByMap) {
             series.push({
                 name: splitByValue,
                 data: splitByMap[splitByValue],
-                type: combinationSetup[splitByValue] || undefined
+                type: combinationSetup ? combinationSetup[splitByValue] : undefined
             });
         }
 
