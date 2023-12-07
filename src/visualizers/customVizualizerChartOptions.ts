@@ -1,5 +1,7 @@
-// export type ICustomVizualizerChartOptions = Highcharts.Options
+import * as Highcharts from 'highcharts'
 
 export interface ICustomVizualizerChartOptions extends Highcharts.Options {
-    combination: object;
+    combinationConfig?: {
+        [key: string]: 'line' | 'column'
+    };
 }
