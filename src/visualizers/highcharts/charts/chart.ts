@@ -272,7 +272,7 @@ export abstract class Chart {
             splitByMap[splitByValue].push([dateNumericValue, yValue]);
         });
         
-        const combinationSetup = options.chartOptions.customVizualizerChartOptions?.combination || undefined;
+        const combinationSetup = options.chartOptions.customVizualizerChartOptions?.combinationConfig || undefined;
 
         for (let splitByValue in splitByMap) {
             series.push({
