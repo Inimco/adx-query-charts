@@ -307,7 +307,12 @@ export class HighchartsVisualizer implements IVisualizer {
         const chartTypeOptions = this.currentChart.getChartTypeOptions();
 
         highchartsOptions = _.merge(highchartsOptions, chartTypeOptions, categoriesAndSeries);
-
+        if(chartOptions.customVizualizerChartOptions.thresholds.length){
+            highchartsOptions.yAxis[0] = {
+                ...highchartsOptions.yAxis[0],
+                plotLines: chartOptions.customVizualizerChartOptions.thresholds
+            }
+        }
         return highchartsOptions;
     }
 
