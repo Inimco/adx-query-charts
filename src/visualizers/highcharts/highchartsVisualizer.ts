@@ -313,6 +313,14 @@ export class HighchartsVisualizer implements IVisualizer {
                 plotLines: chartOptions.customVizualizerChartOptions.thresholds
             }
         }
+        if(chartOptions.customVizualizerChartOptions.yAxisMinMaxConfig.length){
+            chartOptions.customVizualizerChartOptions.yAxisMinMaxConfig.forEach((e , i) => {
+                if(e){
+                    highchartsOptions.yAxis[i].min = e.min
+                    highchartsOptions.yAxis[i].max = e.max
+                }
+            })
+        }
         return highchartsOptions;
     }
 
