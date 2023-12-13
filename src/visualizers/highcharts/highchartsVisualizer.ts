@@ -307,13 +307,13 @@ export class HighchartsVisualizer implements IVisualizer {
         const chartTypeOptions = this.currentChart.getChartTypeOptions();
 
         highchartsOptions = _.merge(highchartsOptions, chartTypeOptions, categoriesAndSeries);
-        if(chartOptions.customVizualizerChartOptions.thresholds.length){
+        if(chartOptions.customVizualizerChartOptions.thresholds?.length){
             highchartsOptions.yAxis[0] = {
                 ...highchartsOptions.yAxis[0],
                 plotLines: chartOptions.customVizualizerChartOptions.thresholds
             }
         }
-        if(chartOptions.customVizualizerChartOptions.yAxisMinMaxConfig.length){
+        if(chartOptions.customVizualizerChartOptions.yAxisMinMaxConfig?.length){
             chartOptions.customVizualizerChartOptions.yAxisMinMaxConfig.forEach((e , i) => {
                 if(e){
                     highchartsOptions.yAxis[i].min = e.min

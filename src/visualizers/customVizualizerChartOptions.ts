@@ -5,8 +5,8 @@ export interface ICustomVizualizerChartOptions extends Highcharts.Options {
         [key: string]: 'line' | 'column'
     };
     thresholds?: Highcharts.NavigatorYAxisPlotLinesOptions[],
-    yAxisMinMaxConfig?: {
+    yAxisMinMaxConfig?: ({
         min: number,
         max: number
-    }[]
+    } | null)[]
 }
