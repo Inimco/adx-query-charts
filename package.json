@@ -1,12 +1,12 @@
 {
   "name": "@inimco/adx-query-charts",
-  "version": "1.50.0",
+  "version": "1.51.0",
   "description": "Draw charts from Azure Data Explorer queries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev":"tsc --watch",
+    "dev": "tsc --watch",
     "prepublish": "npm run build && npm run test",
     "test": "npm run build && jest",
     "test:watch": "jest --watch",
